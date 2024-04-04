@@ -3,25 +3,63 @@ h1, h2 {
   padding: 0;
   /* font-size: 1.2em; */
   font-weight: lighter;
+  font-family: 'Wallpoet', sans-serif;
+  color:aqua;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+  /* font-size: 1.2em; */
+  font-weight: lighter;
+  font-family: 'Wallpoet', sans-serif;
+  color:aqua;
 }
 
 #content {
   width: calc(100% - 30px);
-  margin: 10px;080;
+  margin: 10px;
+  /* 080; */
   padding: 10px;
-  border: solid 1px #808;
+  /* border: solid 1px #808; */
   font-family: sans-serif;
+  border: solid 10px #fb00ff; /* A teal color border */
+  background-color: #310086;
 }
 
-.minor-section {
+/* .minor-section {
   margin: 10px;
-  padding: 10px;
-  border: solid 1px #A0A0A0;
-  border-radius: 10px;
+  padding: 10px; */
+  /* border: solid 1px #A0A0A0; */
+  /* border-radius: 10px;
 }
 
 .minor-section h2 {
   font-size: 1.2em;
+} */
+.button-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.button-list li {
+  margin-bottom: 10px; /* Adjust as needed */
+}
+
+.button-list li a {
+  display: inline-block;
+  padding: 10px 20px 10px 20px;
+  background-color: #ff00f2; /* Green background */
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+.button-list li a:hover {
+  /* background-color: #45a049; Darker green on hover */
+  box-shadow: 0 0 10px #d1fdff !important; /* Set a glowing shadow effect */
+  transition: box-shadow 0.3s ease;
 }
 
 /* Set the image to be responsive */
@@ -40,6 +78,7 @@ canvas {
   display: flex;
   justify-content: flex-end; /* Aligns the button to the right */
   margin-top: 0.25em;
+  color: #e100ff;
 }
 
 .fullscreen-box button {
