@@ -2,7 +2,7 @@
 <html>
 <head>
 	<!-- This title is used for tabs and bookmarks -->
-	<title>Experiment X - Subject/Topic</title>
+	<title>Experiment 1 - Subject/Topic</title>
 
 	<!-- Use UTF character set, a good idea with any webpage -->
 	<meta charset="UTF-8" />
@@ -12,6 +12,7 @@
 	<!-- Include CSS file, including a site-wide CSS and for this particular page -->
 	<link rel="stylesheet" type="text/css" href="../css/site.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Micro+5&family=Noto+Sans+Arabic:wght@100..900&family=Noto+Sans+SC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&family=Wallpoet&display=swap" rel="stylesheet">
 
 	<!-- Load jQuery library -->
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -25,41 +26,199 @@
 	<!-- Use me for a JavaScript OOP Project -->
 	<script type="text/javascript" src="./js/project.js" DEFER></script>
 	<!-- Use me for a p5.js project -->
-	<script type="text/javascript" src="./js/sketch.js" DEFER></script>
+	<!-- <script type="text/javascript" src="./js/sketch.js" DEFER></script> -->
 </head>
+<style>
+	body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: black;
+  color: lightblue; /* Changing text color to white for better visibility */
+}
+
+/*rocket*/
+.rocket {
+  position: relative;
+  display: inline-block;
+}
+.rocket-body {
+  width: 40px;
+  height: 100px;
+  background-color: #CCC;
+  border-radius: 20px 20px 0 0;
+  position: relative;
+  z-index: 1;
+}
+ .red-fin {
+  position: absolute;
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-bottom: 20px solid transparent;
+  border-right: 20px solid red;
+}
+.left-fin {
+  top: 60px;
+  left: 35px;
+  transform: rotate(-45deg);
+}
+.right-fin {
+  top: 60px;
+  right: 35px;
+  transform: rotate(-135deg);
+}
+.rocket-head {
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40px;
+  height: 30px;
+  background-color: #FF0000;
+  border-radius: 20px 20px 0 0;
+  position: relative;
+  z-index: 3;
+}
+.rocket-flame {
+  position: absolute;
+  bottom: -40px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 10px solid transparent;
+  border-right: 10px solid transparent;
+  border-top: 30px solid orange;
+}
+.window {
+  position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: #6495ED;
+  z-index: 3;
+}
+.triangle {
+  position: absolute;
+  bottom: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-left: 20px solid transparent;
+  border-right: 20px solid transparent;
+  border-bottom: 20px solid #CCC;
+}
+
+/*puts rocket next to box*/
+.content-wrapper {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 0px;
+  }
+
+  @media (max-width: 600px) {
+	.content-wrapper {
+	  flex-direction: column;
+	}
+
+	header {
+		height: 325px;
+	  }
+  }
+
+  body, html {
+	margin: 0;
+	padding: 0;
+  }
+
+  /*regen button*/
+  #clicker {
+    display: inline-block;
+    padding: 10px 10px 10px 10px;
+	margin: 10px 10px 10px 10px;
+    background-color: #ff00f2;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s, box-shadow 0.3s;
+  }
+
+  #clicker:hover {
+    background-color: #ff00f2;
+    box-shadow: 0 0 10px #d1fdff;
+  }
+
+
+/* queried chatgpt ab rocket and edited it https://chat.openai.com/share/55ca6791-5994-41cb-bb00-6eb9267f7dbe 
+and https://chat.openai.com/share/5a778afb-3088-42cb-bf7c-1e99d492f4b2*/
+
+</style>
 <body>
 	<!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
 	<main id="content">
 		<section>
 
-			<h1>Experiment X - Subject/Topic</h1>
+			<h1>Experiment 1 - ProcGen/Generator</h1>
 
 			<div class="minor-section">
-				<div id="canvas-container">
-					<!-- canvas will be added here -->
-				</div>
-                <div class="fullscreen-box">
-                    <button id="fullscreen">Fullscreen</button>
-                </div>
+				<button id="clicker">
+					reroll it
+				  </button>
+				  <div class="content-wrapper">
+					<div
+					  style="font-family: fantasy; border: thin solid pink; padding: 1em; margin: 1em; box-shadow: 10px 10px 15px blue; background: #00008B;"
+					  id="box"
+					></div>
+					<div class="rocket">
+					  <div class="rocket-head"></div>
+					  <div class="rocket-body">
+						<div class="red-fin left-fin"></div>
+						<div class="red-fin right-fin"></div>
+						<div class="window"></div> 
+						<div class="rocket-flame"></div>
+						<div class="triangle"></div>
+					  </div>
+					</div>
+				  </div>
 			</div>
 
 			<div class="minor-section">
+				<br>
+				<br>
 				<h2>Description</h2>
-				<p>What are you trying to acomplish with this experiment?</p>
+				<p>What are you trying to accomplish with this experiment?
+					The goal of this project was to create a fun generator that generates futuristic characters and to practice js and html. 
+				</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Technical</h2>
-				<p>Describe in detail what you did technically and how it works?</p>
+				<p>Describe in detail what you did technically and how it works?
+					For my CMPM147, our first assignment directed us to use a template off of Glitch that generated quests. It works by filling in a random element from a list into a string creating a varying
+					generator response. I used this strategy to create a futuristic 25th century character generator that a user can use to generate characters for various forms of media like a game or story.
+					We also got to practice html, css, and js where I was able to experiment with box shadows, buttons, colors, and even prompted chatgpt for some base shapes for rocket css art. I had to do a lot
+					of adjusting from the chatgpt generated version to get it to look right and how I wanted.
+				</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Reflection</h2>
-				<p>Each person that worked on the code should reflect on the process, the difficulties, and the successes of the experiment.</p>
+				<p>Each person that worked on the code should reflect on the process, the difficulties, and the successes of the experiment.
+					The biggest difficulty I faced was working from a template cause for certain parts of getting the HTML exactly how I wanted. 
+					As for successes, I think the css art and website style is pretty good for the class, especially the glowing box shadow on the generator
+					and the buttons. I also cannot find where the bullet point for the home button is hiding but I will have to fix it later. Not a big deal!
+				</p>
 			</div>
 
 		</section>
-		<nav id="links" class="minor-section">
+		<nav id="clicker" class="minor-section">
 			<!-- Put link back to homepage here. -->
             <ul>
                 <li><a href="../index.html">Home</a></li>
