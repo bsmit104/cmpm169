@@ -23,9 +23,10 @@ p {
   padding: 10px;
   /* border: solid 1px #808; */
   font-family: sans-serif;
-  border: solid 10px #fb00ff; /* A teal color border */
+  border: solid 10px #fb00ff;
   background-color: #310086;
 }
+
 
 /* .minor-section {
   margin: 10px;
@@ -93,3 +94,4 @@ body.is-fullscreen #canvas-container {
   margin: 0; /* Remove any default margins */
   z-index: 1000; /* Ensure it's above other content */
 }
+

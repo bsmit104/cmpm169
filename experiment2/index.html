@@ -12,6 +12,8 @@
 	<!-- Include CSS file, including a site-wide CSS and for this particular page -->
 	<link rel="stylesheet" type="text/css" href="../css/site.css">
 	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Micro+5&family=Noto+Sans+Arabic:wght@100..900&family=Noto+Sans+SC:wght@100..900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Orbitron:wght@400..900&family=Oxanium:wght@200..800&family=Wallpoet&display=swap" rel="stylesheet">
+
 
 	<!-- Load jQuery library -->
 	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
@@ -32,30 +34,45 @@
 	<main id="content">
 		<section>
 
-			<h1>Experiment X - Subject/Topic</h1>
+			<h1>Experiment 2 - ProcGen/Living Impressions</h1>
 
 			<div class="minor-section">
 				<div id="canvas-container">
 					<!-- canvas will be added here -->
+					<button id="reimagine" class="clicker">Reimagine</button>
+
 				</div>
                 <div class="fullscreen-box">
-                    <button id="fullscreen">Fullscreen</button>
+                    <button id="fullscreen" class="clicker">Fullscreen</button>
                 </div>
 			</div>
 
+			<script src="https://button.glitch.me/button.js" defer></script>
+
 			<div class="minor-section">
 				<h2>Description</h2>
-				<p>What are you trying to acomplish with this experiment?</p>
+				<p>The goal of this project was to generate an geometric interpretation of something similar to an image. This project was done
+					for CMPM147 Generative Design at UCSC. I chose a cyber punk futuristic city and capitalized heavily on the colors to create
+					the similar environment, alongside building shapes and a water reflection.
+				</p>
+				<!-- <img class="city-photo" src="./cityinspo.jpg" width="400" height="100"> -->
+				<a href="https://www.deviantart.com/michaeljonathan2114/art/cyber-city-wallpaper-882823179" target="_blank">
+					<img class="city-photo" src="./cityinspo.jpg" width="400" height="100">
+				</a>
 			</div>
 
 			<div class="minor-section">
 				<h2>Technical</h2>
-				<p>Describe in detail what you did technically and how it works?</p>
+				<p>I started off in Glitch with a fork of Adam Smith's interpretation of a field with trees. I used p5.js to incorporate shapes
+					to make the city feeling. 
+				</p>
 			</div>
 
 			<div class="minor-section">
 				<h2>Reflection</h2>
-				<p>Each person that worked on the code should reflect on the process, the difficulties, and the successes of the experiment.</p>
+				<p>I worked alone on this project. I did not run into many hiccups aside from confusion surrounding how to properly get shapes
+					in p5.js but with some help of chatgpt and Adam's started code, I was able to figure it out.
+				</p>
 			</div>
 
 		</section>

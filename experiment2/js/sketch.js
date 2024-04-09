@@ -12,8 +12,18 @@ const VALUE2 = 2;
 
 // Globals
 let myInstance;
+let canvas;
 let canvasContainer;
 var centerHorz, centerVert;
+let seed = 239;
+
+const randompink = "#fe019a";
+const buildingLightBlue = "#00ffef";
+const black = "#000000";
+const skyDarkBlue = "#000057";
+const buildingDarkBlue = "#00008B";
+const waterBlue = "#030158";
+const randompurp = "#5552fc";
 
 class MyClass {
     constructor(param1, param2) {
@@ -34,46 +44,92 @@ function resizeScreen() {
   // redrawCanvas(); // Redraw everything based on new size
 }
 
-// setup() function is called once when the program starts
-function setup() {
-  // place our canvas, making it fit our container
-  canvasContainer = $("#canvas-container");
-  let canvas = createCanvas(canvasContainer.width(), canvasContainer.height());
+function setup() {  
+  let canvasContainer = $("#canvas-container");
+  canvas = createCanvas(canvasContainer.width(), canvasContainer.height());
   canvas.parent("canvas-container");
-  // resize canvas is the page is resized
+  $(window).resize(resizeCanvasToFitContainer);
+  resizeCanvasToFitContainer();
 
-  // create an instance of the class
-  myInstance = new MyClass("VALUE1", "VALUE2");
-
-  $(window).resize(function() {
-    resizeScreen();
+  $("#reimagine").on("click", function() {
+    seed++;
   });
-  resizeScreen();
+
+  setInterval(autoGen, 5000);
 }
 
-// draw() function is called repeatedly, it's the main animation loop
+function autoGen() {
+  seed++;
+  redraw();
+}
+
+function resizeCanvasToFitContainer() {
+  let canvasContainer = $("#canvas-container");
+  canvas.resize(canvasContainer.width(), canvasContainer.height());
+}
+
 function draw() {
-  background(220);    
-  // call a method on the instance
-  myInstance.myMethod();
+  randomSeed(seed);
 
-  // Set up rotation for the rectangle
-  push(); // Save the current drawing context
-  translate(centerHorz, centerVert); // Move the origin to the rectangle's center
-  rotate(frameCount / 100.0); // Rotate by frameCount to animate the rotation
-  fill(234, 31, 81);
+  background(100);
+
   noStroke();
-  rect(-125, -125, 250, 250); // Draw the rectangle centered on the new origin
-  pop(); // Restore the original drawing context
 
-  // The text is not affected by the translate and rotate
-  fill(255);
-  textStyle(BOLD);
-  textSize(140);
-  text("p5*", centerHorz - 105, centerVert + 40);
+  fill(skyDarkBlue);
+  rect(0, 0, width, height);
+
+  let numRectangles = 10;
+  let rectWidth = width / numRectangles;
+
+  for (let i = 0; i < numRectangles; i++) {
+    let rectHeight = random(height) * 0.75;
+    let fillColor = random() > 0.5 ? buildingDarkBlue : buildingLightBlue;
+
+    let rectY = height * 0.75 - rectHeight;
+
+    fill(fillColor);
+    rect(i * rectWidth, rectY, rectWidth, rectHeight);
+  }
+  
+  for (let i = 0; i < numRectangles; i++) {
+    let rectHeight = random(height) * 0.75;
+    let fillColor = randompink;
+
+    let rectY = height * 0.55 + rectHeight;
+
+    fill(fillColor);
+    rect(i * rectWidth, rectY, rectWidth, rectHeight);
+  }
+  
+  for (let i = 0; i < numRectangles; i++) {
+    let rectHeight = random(height) * 0.75;
+    let fillColor = randompurp;
+
+    let rectY = height * 0.55 + rectHeight;
+
+    fill(fillColor);
+    rect(i * rectWidth, rectY, rectWidth, rectHeight);
+  }
+
+  fill(black);
+  rect(0, height * 0.75, width, height * 0.25);
+
+  
+  let numRectangles2 = 10;
+  let rectWidth2 = width / numRectangles;
+
+  for (let i = 0; i < numRectangles2; i++) {
+    let top = height * 0.75; 
+    let bottom = random(top, height);
+    fill(waterBlue);
+    rect(i * rectWidth2, top, rectWidth2, bottom - top);
+  }
 }
 
 // mousePressed() function is called once after every time a mouse button is pressed
 function mousePressed() {
     // code to run when mouse is pressed
 }
+
+// queried with chatgpt about shapes
+// https://chat.openai.com/share/c2ad1c7c-bcd5-4df0-978f-5a4cf50ee45a
