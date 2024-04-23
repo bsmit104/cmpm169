@@ -27,8 +27,8 @@
 	<!-- Use me for a p5.js project -->
 	<script type="text/javascript" src="./js/sketch.js" DEFER></script>
 
-	<script type="text/javascript" src="./js/p2_base.js" DEFER></script>
-	<script type="text/javascript" src="./js/p2_solution.js" DEFER></script>
+	<!-- <script type="text/javascript" src="./js/p2_base.js" DEFER></script>
+	<script type="text/javascript" src="./js/p2_solution.js" DEFER></script> -->
 	<!-- <script type="text/javascript" src="./js/p2_base2.js" DEFER></script>
 	<script type="text/javascript" src="./js/p2_solution2.js" DEFER></script> -->
 </head>
@@ -39,9 +39,7 @@
 
 			<h1>Experiment 3 - ProcGen/Alternate Worlds</h1>
 
-			<div class="minor-section">
-				<!-- <div id="canvas-container"> -->
-					<!-- canvas will be added here -->
+			<!-- <div class="minor-section">
 					<button id="reseedButton">
 						reseed
 					  </button>
@@ -50,21 +48,95 @@
 					  <span id="canvasContainer" style="margin: 10px;"></span>
 					  <textarea cols="20" rows="20" id="asciiBox" style="opacity: 0.5; letter-spacing: 1ex; width: 320px; margin: 10px; font-family: monospace;"></textarea>
 
-					  <!-- <button id="reseedButton2">
-						reseed
-					  </button>
-					  <span id="seedReport2"></span>
-					  <hr />
-					  <span id="canvasContainer2" style="margin: 10px;"></span>
-					  <textarea cols="20" rows="20" id="asciiBox2" style="opacity: 0.5; letter-spacing: 1ex; width: 320px; margin: 10px; font-family: monospace;"></textarea> -->
-
 				<a href="index2.html" style="text-decoration: none;">
 					<button id="dungeonGeneratorButton" style="width:100%; height:50px;">SEE ALSO LAND GENERATOR</button>
 				</a>
-				<!-- </div> -->
                 <div class="fullscreen-box">
                     <button id="fullscreen">Fullscreen</button>
                 </div>
+			</div> -->
+			<div class="minor-section">
+				<div class="no-gap-container">
+						<!-- canvas will be added here -->
+						<button id="reseedButtonOverworld">
+							reseed
+						</button>
+						<span id="seedReportOverworld">seed</span>
+						<hr>
+						<span id="canvasContainerOverworld" style="margin: 10px;"><canvas id="defaultCanvas0" class="p5Canvas" width="640" height="640" style="width: 320px; height: 320px;"></canvas></span>
+						<textarea cols="20" rows="20" id="asciiBoxOverworld" style="opacity: 0.5; letter-spacing: 1ex; width: 320px; margin: 10px; font-family: monospace;"></textarea>
+
+						<div class="minor-section">
+							<h2>Description</h2>
+							<p>What are you trying to acomplish with this experiment?
+								<br>
+								This here is a overworld river scene generator. It features varying grass and dark charcoal sands with smooth transitions between the. There is also a little village of a varying number of houses frequently. I applied a smooth transition for the winter to spring.
+								<br>
+								Codes: 
+								<br>
+								The variation in dirt grass and houses can be seen randomly selected grass 
+								<br>
+								placeTile(i, j, (4 * pow(random(), g)) | 0, 6);
+								<br>
+								randomly selected dirt 
+								<br>
+								placeTile(i, j, (4 * pow(random(), g)) | 0, 9);
+								<br>
+								randomly selected house of 2 
+								<br>
+								if (random() < 0.5) { placeTile(i, j, 26, 3); } else { placeTile(i, j, 26, 2);
+								<br>
+								with a noisey river that spawns one of the couple river tiles placeTile(i, j, (4 * pow(noise(noiseT / 10, i, j / 4 + noiseT), 2)) | 0, 14);
+								<br>
+								all of which (except the river) alternate with other tiles for the season change using millis() let tileTime = millis() - delay;
+								<br>
+								Life: I applied a smooth transition for the winter to spring (and back) using millis() to give each tile a lifetime before the change. This shows time passing.
+							</p>
+						</div>
+			
+						<div class="minor-section">
+							<br>
+							<h2>Technical</h2>
+							<p>Describe in detail what you did technically and how it works?
+							<br>
+							using p5.js I was able to tile a canvas using noise and math to generate landscapes. I added cool variation
+							with time using the millis function. The generateGrid function creates a grid for 
+							a overworld landscape, applying Perlin noise to make a flowing river across the grid. 
+							This function uses a constrain function to make the river remains within the grid boundaries and vertical shape. 
+							</p>
+						</div>
+			
+						<div class="minor-section">
+							<br>
+							<h2>Reflection</h2>
+							<p>I think I did a good job and I am proud of the work I did. 
+								I spent like 27 hours on the whole thing and tried very hard 
+								because my last assignment was supposedly not satisfactory. 
+								Getting the rooms to not spawn next to or on top of each other 
+								sucked but I figured it out after a long time.
+								<br>
+								My most proud accomplishments are definitely
+								the Winter to Spring, non overlapping or adjacent rooms, the millis transitions,
+								and the general aesthetic appeal. I was pretty satisfied with the final product and definitely
+								deserve a full credit.
+
+								<br>
+								<br>
+								(using tiles from Micro Tileset - Overworld & Dungeon by thkaspar)
+							</p>
+						</div>
+				</div>
+				<div class="no-gap-container">
+						<!-- canvas 2 will be added here -->
+						<button id="reseedButtonDungeon">
+							reseed
+						</button>
+						<span id="seedReportDungeon">seed</span>
+						<hr>
+						<span id="canvasContainer-2" style="margin: 10px;"><canvas id="defaultCanvas1" class="p5Canvas" width="640" height="640" style="width: 320px; height: 320px;"></canvas></span>
+						<textarea cols="20" rows="20" id="asciiBoxDungeon" style="opacity: 0.5; letter-spacing: 1ex; width: 320px; margin: 10px; font-family: monospace;"></textarea>
+				</div>
+
 			</div>
 
 			<div class="minor-section">
@@ -190,6 +262,10 @@ show time passing. I used millis() for both changes.
 					the Winter to Spring, non overlapping or adjacent rooms, the millis transitions,
 					and the general aesthetic appeal. I was pretty satisfied with the final product and definitely
 					deserve a full credit.</p>
+
+					<br>
+					<br>
+					(using tiles from Micro Tileset - Overworld & Dungeon by thkaspar)
 			</div>
 
 		</section>
