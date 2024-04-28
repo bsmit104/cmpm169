@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- This title is used for tabs and bookmarks -->
+	<title>Experiment 4 - ProcGen/Infinite Worlds</title>
+
+	<!-- Use UTF character set, a good idea with any webpage -->
+	<meta charset="UTF-8" />
+	<!-- Set viewport so page remains consistently scaled w narrow devices -->
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+	<!-- Include CSS file, including a site-wide CSS and for this particular page -->
+	<link rel="stylesheet" type="text/css" href="../css/site.css">
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+
+	<!-- Load jQuery library -->
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+        crossorigin="anonymous"></script>
+	<!-- Load p5.js library -->
+	<script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
+
+	<!-- Link to javascript files - DEFER waits until all elements are rendered -->
+    <script type="text/javascript" src="../js/site.js" DEFER></script>
+	<!-- Use me for a JavaScript OOP Project -->
+	<script type="text/javascript" src="./js/project.js" DEFER></script>
+	<!-- Use me for a p5.js project -->
+	<!-- <script type="text/javascript" src="./js/sketch.js" DEFER></script> -->
+
+	<script type="text/javascript" src="./js/xxhash.min.js" DEFER></script>
+	<script type="text/javascript" src="./js/engine.js" DEFER></script>
+	<script type="text/javascript" src="./js/my_world.js" DEFER></script>
+</head>
+<body>
+	<!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
+	<main id="content">
+		<section>
+
+			<h1>Experiment 4 - ProcGen/Infinite Worlds</h1>
+
+			<div class="minor-section">
+				<!-- <div id="canvas-container"> -->
+					<!-- canvas will be added here -->
+
+					  <div id="container"></div>
+					  <div id="waldoCount"></div>
+
+					  <!-- <button id="reseedButton2">
+						reseed
+					  </button>
+					  <span id="seedReport2"></span>
+					  <hr />
+					  <span id="canvasContainer2" style="margin: 10px;"></span>
+					  <textarea cols="20" rows="20" id="asciiBox2" style="opacity: 0.5; letter-spacing: 1ex; width: 320px; margin: 10px; font-family: monospace;"></textarea> -->
+<!-- 
+				<a href="index2.html" style="text-decoration: none;">
+					<button id="dungeonGeneratorButton" style="width:100%; height:50px;">SEE ALSO INFINITE OCEAN GENERATOR</button>
+				</a>
+				<a href="index3.html" style="text-decoration: none;">
+					<button id="dungeonGeneratorButton" style="width:100%; height:50px;">SEE ALSO INFINITE SPACE GENERATOR</button>
+				</a> -->
+				<br>
+				<p>Use browser back button to return to home page</p>
+				<!-- </div> -->
+                <div class="fullscreen-box">
+                    <button id="fullscreen">Fullscreen</button>
+                </div>
+			</div>
+
+			<div class="minor-section">
+				<h2>Description</h2>
+				<p>What are you trying to acomplish with this experiment?
+					<br>
+					This is an infinite Where's Waldo generator. It is a 
+					casual clicking game. There is variation in the environment 
+					with beaches, oceans, dirt, and grassy regions. There is also 
+					a lot of variation in people with several skin colors and over 
+					10 clothes colors. Some people spawn with hats (Waldos). People 
+					do not spawn in water.“Waldo Tiles” are clickable. When the user 
+					clicks on a person with a hat, the tile turns red and the score
+					is increased.
+				</p>
+			</div>
+
+			<div class="minor-section">
+				<br>
+				<h2>Technical</h2>
+				<p>Describe in detail what you did technically and how it works?
+				<br>
+					I used perlin noise to generate biomes with dirt, sand, grass, 
+					and oceans. I also used noise to generate variation in the clothing
+					and skin tones of the people. I used object mapping to decipher and
+					keep track of Waldo tiles, in order to update the global count, and
+					change the tiles to red.
+				</p>
+			</div>
+
+			<div class="minor-section">
+				<br>
+				<h2>Reflection</h2>
+				<p>
+					I am highly satisfied with this infinite generator because I was able
+					to gamify it. I think that it looks pretty good too for p5js graphics.
+					If I were to expand upon it, I would probably move away from p5 graphics 
+					and try to incorporate my own art.
+					<br>
+				</p>
+			</div>
+
+			<div class="minor-section">
+				<br />
+				<h2>Statement</h2>
+				<p>
+				  <br />
+				  INFINITY<br>
+				  I made an infinite Where's Waldo generator. It is a casual clicking
+				  game. There is variation in the environment with beaches, oceans,
+				  dirt, and grassy regions. There is also a lot of variation in people
+				  with several skin colors and over 10 clothes colors. Some people
+				  spawn with hats (Waldos). People do not spawn in water.“Waldo Tiles”
+				  are clickable. When the user clicks on a person with a hat, the tile
+				  turns red and the score is increased. The world expands up, down,
+				  left, and right infinitely. 
+				  <br>VARIATION IN SPACE<br> There is variation in
+				  the environment with beaches, oceans, dirt, and grassy regions.
+				  There is also a lot of variation in people with several skin colors
+				  and over 10 clothes colors. Some people spawn with hats (Waldos).
+				  People do not spawn in water. 
+				  <br>VARIATION IN KEY<br> Different noise
+				  generates significantly different terrain to make entirely new
+				  worlds and Waldo locations. 
+				  <br>SIGNS OF LIFE<br> “Waldo Tiles” are
+				  clickable. When the user clicks on a person with a hat, the tile
+				  turns red and the score is increased. This progresses time within
+				  the game by how many Waldos have been discovered as tiles get marked
+				  red and the count increases. Yes, a change in game state/progression
+				  does count as a progression in time. If I really wanted to, I could
+				  have the water wiggle and I even have the code for it (see
+				  https://infinite-shire.glitch.me/ a generator I stopped working on),
+				  but I believe that takes away from the game, and as the artistic
+				  creator I say that progression in game, is progression in world
+				  time. This project was inspired by this inspiring image:
+				  <br>
+				  <img
+					src="https://cdn.glitch.global/6ce87986-f794-486c-9684-87c9c41fd3ed/WaldoImage.jpg?v=1714333862388"
+				  />
+				  [source](https://www.penguinrandomhouse.com/books/74626/wheres-waldo-the-fantastic-journey-by-martin-handford-illustrated-by-martin-handford/)
+				</p>
+			  </div>
+
+		</section>
+		<nav id="links" class="minor-section">
+			<!-- Put link back to homepage here. -->
+            <ul>
+                <li><a href="../index.html">Home</a></li>
+            </ul>
+		</nav>
+	</main>
+</body>
+</html>

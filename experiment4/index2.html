@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- This title is used for tabs and bookmarks -->
+    <title>Experiment 4 - ProcGen/Infinite Worlds</title>
+
+    <!-- Use UTF character set, a good idea with any webpage -->
+    <meta charset="UTF-8" />
+    <!-- Set viewport so page remains consistently scaled w narrow devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Include CSS file, including a site-wide CSS and for this particular page -->
+    <link rel="stylesheet" type="text/css" href="../css/site.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <!-- Load jQuery library -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Load p5.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
+
+    <!-- Link to javascript files - DEFER waits until all elements are rendered -->
+    <script type="text/javascript" src="../js/site.js" defer></script>
+    <!-- Use me for a JavaScript OOP Project -->
+    <script type="text/javascript" src="./js/project.js" defer></script>
+    <!-- Use me for a p5.js project -->
+    <!-- <script type="text/javascript" src="./js/sketch.js" DEFER></script> -->
+
+    <script type="text/javascript" src="./js/xxhash.min.js" defer></script>
+    <script type="text/javascript" src="./js/engine2.js" defer></script>
+    <script type="text/javascript" src="./js/my_world2.js" defer></script>
+  </head>
+  <body>
+    <!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
+    <main id="content">
+      <section>
+        <h1>Experiment 4 - ProcGen/Infinite Worlds</h1>
+
+        <div class="minor-section">
+          <!-- <div id="canvas-container"> -->
+          <!-- canvas will be added here -->
+
+          <div id="container"></div>
+          <!-- <div id="waldoCount"></div> -->
+
+          <!-- <button id="reseedButton2">
+						reseed
+					  </button>
+					  <span id="seedReport2"></span>
+					  <hr />
+					  <span id="canvasContainer2" style="margin: 10px;"></span>
+					  <textarea cols="20" rows="20" id="asciiBox2" style="opacity: 0.5; letter-spacing: 1ex; width: 320px; margin: 10px; font-family: monospace;"></textarea> -->
+
+          <br />
+          <p>Use browser back button to return to home page</p>
+          <!-- <a href="index.html" style="text-decoration: none;">
+						<button id="dungeonGeneratorButton" style="width:100%; height:50px;">SEE ALSO INFINITE WALDO GENERATOR</button>
+					</a>
+					<a href="index3.html" style="text-decoration: none;">
+						<button id="dungeonGeneratorButton" style="width:100%; height:50px;">SEE ALSO INFINITE SPACE GENERATOR</button>
+					</a> -->
+          <!-- </div> -->
+          <!-- <div class="fullscreen-box">
+                    <button id="fullscreen">Fullscreen</button>
+                </div> -->
+        </div>
+
+        <div class="minor-section">
+          <h2>Description</h2>
+          <p>
+            What are you trying to acomplish with this experiment?
+            <br />
+            This is an infinite oceans generator. It generates an infinite
+            sea-scape of boats and islands. I was trying to create feelings of
+            calmness for the user and believe I was successful with the way the
+            ocean nicely sways and flows. There is also an interactible feature
+            to create a splash when the user clicks.
+          </p>
+        </div>
+
+        <div class="minor-section">
+          <br />
+          <h2>Technical</h2>
+          <p>
+            Describe in detail what you did technically and how it works?
+            <br />
+            The oceans are generated with perlin noise and the tiles tween up
+            and down using sine waves and a frame count which clearly creates
+            the illusion of the passage of time. There is a smooth transition
+            applied between the tiles to create a more aesthetic ocean. The
+            islands are also generated with perlin noise. Boats are placed
+            randomly using a hash map. The splash on click is a tween.
+          </p>
+        </div>
+
+        <div class="minor-section">
+          <br />
+          <h2>Reflection</h2>
+          <p>
+            <br />
+            I am proud of the work I did in creating a relaxing ocean space that
+            can be watched and enjoyed. I feel like there is room for growth in
+            this project but but it was difficult with the scope of time alotted
+            for 3 generators. I still believe that my achievements are solid and
+            that the generator is pretty nice.
+          </p>
+        </div>
+
+        <div class="minor-section">
+          <br />
+          <h2>Statement</h2>
+          <p>
+            <br />
+            INFINITY<br />
+            I made an infinite ocean generator. It generates an infinite
+            sea-scape of boats and islands. I was trying to create feelings of
+            calmness for the user and believe I was successful with the way the
+            ocean nicely sways and flows. There is also an intractable feature
+            to create a splash when the user clicks. The world expands up, down,
+            left, and right infinitely.
+
+            <br />VARIATION IN SPACE<br />
+            There is a perlin noise ocean with smooth transitions, between
+            tiles, islands that spawn on occasion, and boats that spawn on
+            occasion. The noise differences between small islands and big ocean
+            transitions make for an interesting array if difference, especially
+            in the simple way the the ocean flows up and down using sine waves.
+
+            <br />VARIATION IN KEY<br />
+            Different noise generates significantly different terrain to make
+            entirely new worlds and boat locations and shallow vs deep ocean
+            transitions. There are collections of islands, big islands, and
+            small islands
+
+            <br />SIGNS OF LIFE<br />
+            The ocean tiles all move up and down slowly using sine and time
+            progression to simulate waves. There is also an option to click on a
+            tile causing the surrounding tiles to splash up and down.
+            <br />
+            This project was inspired by this inspiring image:<br />
+            <img
+              src="https://cdn.glitch.global/813b617c-833a-4c2c-ba33-5168fa725e8c/oceanInspo.jpg?v=1714333873404"
+            />
+            [source](https://www.sciencephoto.com/media/911331/view/aerial-view-of-turquoise-reef-in-the-pacific-ocean)
+          </p>
+        </div>
+      </section>
+      <nav id="links" class="minor-section">
+        <!-- Put link back to homepage here. -->
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+        </ul>
+      </nav>
+    </main>
+  </body>
+</html>

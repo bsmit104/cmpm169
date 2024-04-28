@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- This title is used for tabs and bookmarks -->
+    <title>Experiment 4 - ProcGen/Infinite Worlds</title>
+
+    <!-- Use UTF character set, a good idea with any webpage -->
+    <meta charset="UTF-8" />
+    <!-- Set viewport so page remains consistently scaled w narrow devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Include CSS file, including a site-wide CSS and for this particular page -->
+    <link rel="stylesheet" type="text/css" href="../css/site.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <!-- Load jQuery library -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Load p5.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
+
+    <!-- Link to javascript files - DEFER waits until all elements are rendered -->
+    <script type="text/javascript" src="../js/site.js" defer></script>
+    <!-- Use me for a JavaScript OOP Project -->
+    <script type="text/javascript" src="./js/project.js" defer></script>
+    <!-- Use me for a p5.js project -->
+    <!-- <script type="text/javascript" src="./js/sketch.js" DEFER></script> -->
+
+    <script type="text/javascript" src="./js/xxhash.min.js" defer></script>
+    <script type="text/javascript" src="./js/engine3.js" defer></script>
+    <script type="text/javascript" src="./js/my_world3.js" defer></script>
+  </head>
+  <body>
+    <!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
+    <main id="content">
+      <section>
+        <h1>Experiment 4 - ProcGen/Infinite Worlds</h1>
+
+        <div class="minor-section">
+          <!-- <div id="canvas-container"> -->
+          <!-- canvas will be added here -->
+
+          <div id="container"></div>
+          <div id="waldoCount"></div>
+
+          <!-- <button id="reseedButton2">
+						reseed
+					  </button>
+					  <span id="seedReport2"></span>
+					  <hr />
+					  <span id="canvasContainer2" style="margin: 10px;"></span>
+					  <textarea cols="20" rows="20" id="asciiBox2" style="opacity: 0.5; letter-spacing: 1ex; width: 320px; margin: 10px; font-family: monospace;"></textarea> -->
+
+          <!-- <a href="index.html" style="text-decoration: none;">
+					<button id="dungeonGeneratorButton" style="width:100%; height:50px;">SEE ALSO OCEAN GENERATOR</button>
+				</a> -->
+          <!-- </div> -->
+          <!-- <div class="fullscreen-box">
+                    <button id="fullscreen">Fullscreen</button>
+                </div> -->
+        </div>
+
+        <div class="minor-section">
+          <h2>Description</h2>
+          <p>
+            What are you trying to acomplish with this experiment?
+            <br />
+            I call this my infinite spacetime generator. It generates an
+            infinite space scene of planets, stars, and more. There are red,
+            blue, green, yellow, and pink small planets that spawn randomly, big
+            orange and red planets, and UFOs that spawn occasionally.
+          </p>
+        </div>
+
+        <div class="minor-section">
+          <br />
+          <h2>Technical</h2>
+          <p>
+            Describe in detail what you did technically and how it works?
+            <br />
+            stars are generated in random quantities with a hashmap. The UFOs
+            are generated with a hashmap and use the millis() function to tween
+            up and down in their respective tiles. The orange and red suns use a
+            millis() function to rotate a gradient effect around the planet and
+            are also placed using a hash map. Sometimes the smaller planets have
+            a chance of spawning with a ring. The stars use a hashmap as well
+            and generate a random amount of circles of various sizes within each
+            tile.
+          </p>
+        </div>
+
+        <div class="minor-section">
+          <br />
+          <h2>Reflection</h2>
+          <p>
+            <br />
+            I think I resonate most with this generator as an artist with a
+            reflection of my character in it. The way the stars look is
+            genuinely awesome and I think the color variation in planets and how
+            they spawn together is very engaging. I like when they overlap too
+            and there really is a lot of room for interesting finds as the user
+            explores the map.
+          </p>
+        </div>
+
+        <div class="minor-section">
+          <br />
+          <h2>Statement</h2>
+          <p>
+            <br />
+            INFINITY<br> I call this my infinite spacetime generator. It generates
+            an infinite space scene of planets, stars, and more. There are red,
+            blue, green, yellow, and pink small planets that spawn randomly, big
+            orange and red planets, and UFOs that spawn occasionally. The world
+            expands up, down, left, and right infinitely. 
+			<br>VARIATION IN SPACE<br>
+            stars are generated in random quantities with a hashmap. The UFOs
+            are generated with a hashmap and use the millis() function to tween
+            up and down in their respective tiles. The orange and red suns use a
+            millis() function to rotate a gradient effect around the planet and
+            are also placed using a hash map. Sometimes the smaller planets have
+            a chance of spawning with a ring. The stars use a hashmap as well
+            and generate a random amount of circles of various sizes within each
+            tile. 
+			<br>VARIATION IN KEY Different<br> quantities of stars with hashmaps
+            and different planet spawning with various quantities, clusters, and
+            colors all help to create a lot of variation in the world. There is
+            also the chance of UFOs spawning and even the occasional ring around
+            the planet. These smaller variations might not be immediately seen
+            and thus take some time to really look deeper into the space
+            generator and spend some time exploring infinite space time. 
+			<br>SIGNS
+            OF LIFE <br>The space generator has UFOs that tween up and down. There
+            are also big red and orange planets that have a rotating gradient.
+            Both are animated with millis() This project was inspired by this
+            inspiring image:
+            <br />
+            <img
+              src="https://cdn.glitch.global/42f172a4-ad97-43c6-ae76-3cccce0e53df/spaceinspo.jpg?v=1714333886078"
+            />
+            [source](https://www.space.com/27600-around-a-star-system-space-wallpaper.html)
+          </p>
+        </div>
+      </section>
+      <nav id="links" class="minor-section">
+        <!-- Put link back to homepage here. -->
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+        </ul>
+      </nav>
+    </main>
+  </body>
+</html>
