@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <!-- This title is used for tabs and bookmarks -->
+    <title>Experiment 5 - ProcGen/Evolutionary Impressions</title>
+
+    <!-- Use UTF character set, a good idea with any webpage -->
+    <meta charset="UTF-8" />
+    <!-- Set viewport so page remains consistently scaled w narrow devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Include CSS file, including a site-wide CSS and for this particular page -->
+    <link rel="stylesheet" type="text/css" href="../css/site.css" />
+    <link rel="stylesheet" type="text/css" href="css/style.css" />
+
+    <!-- Load jQuery library -->
+    <script
+      src="https://code.jquery.com/jquery-3.7.1.min.js"
+      integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Load p5.js library -->
+    <script src="https://cdn.jsdelivr.net/npm/p5@1.9.2/lib/p5.js"></script>
+
+    <!-- Link to javascript files - DEFER waits until all elements are rendered -->
+    <script type="text/javascript" src="../js/site.js" defer></script>
+    <!-- Use me for a JavaScript OOP Project -->
+    <script type="text/javascript" src="./js/project.js" defer></script>
+    <!-- Use me for a p5.js project -->
+    <!-- <script type="text/javascript" src="./js/sketch.js" DEFER></script> -->
+
+    <script type="text/javascript" src="./js/my_design.js" defer></script>
+    <script type="text/javascript" src="./js/p4_base.js" defer></script>
+  </head>
+  <body>
+    <!-- Style this page by changing the CSS in ../css/site.css or css/experiment.css -->
+    <main id="content">
+      <section>
+        <h1>Experiment 5 - ProcGen/Evolutionary Impressions</h1>
+
+
+		<div class="minor-section">
+			<div id="canvas-container">
+				<select id="dropper"></select>
+				<button id="restart">
+					restart
+				</button>
+				<p>
+					Number of Circles (<span id="numCircsDisplay"></span>):<br />
+					<input id="numCircsInput" type="range" min="1" max="3000" value="500" />
+				</p>
+				<p>
+					Hue changer (0-360):<br />
+					<input id="hueSlider" type="range" min="0" max="360" value="0" />
+				</p>	
+				<p>
+					Saturation changer (0-100):<br />
+					<input id="saturationSlider" type="range" min="0" max="100" value="100" />
+				</p>
+				<p>
+					Lightness changer (0-100):<br />
+					<input id="lightnessSlider" type="range" min="0" max="100" value="50" />
+				</p>
+				<p>
+					Alpha changer (0-255):<br />
+					<input id="alphaSlider" type="range" min="0" max="255" value="255" />
+				</p> 
+				<!-- <p>
+					Background Hue (0-360):
+					<br />
+					<input id="bgHueSlider" type="range" min="0" max="360" value="0" />
+				</p>			   -->
+				<p>
+					Mutation rate (<span id="rate"></span>%):<br /><input id="slider" type="range" min="1" max="100"
+						value="100" />
+				</p>
+				<p id="active"></p>
+				<p>Active score: <span id="activeScore"></span></p>
+				<p>Exploration rate: <span id="fpsCounter"></span> fps</p>
+				<p id="best"></p>
+				<p>Best score: <span id="bestScore"></span></p>
+				<p id="memory" data-max-items="16"></p>
+			</div>
+		</div>
+
+        <div class="minor-section">
+          <h2>Description</h2>
+          <p>
+            What are you trying to acomplish with this experiment?
+            <br />
+            This is an interpretive art generator that artistically transforms
+            an image into a variation made entirely of circles. The generator
+            works best with high contrast images with clear depictions. It does
+            not work well with small aspects in images as it is just a general
+            geometric interpretation.
+          </p>
+        </div>
+
+        <div class="minor-section">
+          <br />
+          <h2>Technical</h2>
+          <p>
+            Describe in detail what you did technically and how it works?
+            <br />
+            In my_design.js, I generate, render, and mutate designs inspired by various images.
+            The p4_inspirations() function returns an array of objects
+            containing for the images. The p4_initialize()
+            function initializes a design based on a selected inspiration,
+            resizing the canvas. I also attempt to extract dominant
+            colors from an image but is not currently utilized. The render
+            function draws the design on the canvas using circles for each
+            foreground element determined in the initialize function. The p4_mutate() function is there to allow the user to 
+			change the design by and adjusting properties of the images randomly with the help of mut()
+          </p>
+        </div>
+
+        <div class="minor-section">
+          <br />
+          <h2>Reflection</h2>
+          <p>
+            I am satisfied with this project and the insight I gained into deeper levels and 
+			uses of p5js, although the concept isn't particularly interesting to me. 
+			I thik the project ultimately satisfies the requirements though and is cleanly done.
+            <br />
+          </p>
+        </div>
+
+      <nav id="links" class="minor-section">
+        <!-- Put link back to homepage here. -->
+        <ul>
+          <li><a href="../index.html">Home</a></li>
+        </ul>
+      </nav>
+    </main>
+  </body>
+</html>
